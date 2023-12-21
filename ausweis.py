@@ -16,6 +16,7 @@ def check_website():
     response = requests.post(URL, data=PAYLOAD)
     if 'liegt zur<B STYLE="color: green"> Abholung bereit.' in response.text:
         send_telegram_message("Ihr Pass liegt zur Abholung bereit!")
+        exit()
     else:
         send_telegram_message("Noch kein Pass..")
 
